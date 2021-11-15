@@ -12,6 +12,27 @@ df2 = pd.read_csv('test.csv')
 n = random.randint(1,100)
 df1 = df.sample(frac = n)
 
+#grid-search procedure
+#grid create
+graph_x = []
+graph_y = []
+graph_z = []
+
+#change arrang(vals) lower and higher based on what you want to test
+for alpha_value in df1.arange(-1,0,1):
+    alpha_value = pow(10,alpha_value)
+    graph_x_row = []
+    graph_y_row = []
+    graph_z_row = []
+
+#change arrang(vals) lower and higher based on what you want to test
+for alpha_value in df2.arange(-1,0,1):
+    alpha_value = pow(10,alpha_value)
+    graph_x_row = []
+    graph_y_row = []
+    graph_z_row = []
+
+
 #to numpy array, split features and labels
 csv_array1 = df1.to_numpy()
 features1 = csv_array1[:, [0, 1, 2, 3]]
